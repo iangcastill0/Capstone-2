@@ -14,7 +14,7 @@ article h1 {
 }
 
 article h3 {
-  color: white !important;
+  color: rgb(0, 0, 0) !important;
   width: 75%;
   margin: 0 auto;
   text-align: center;
@@ -53,6 +53,7 @@ form {
   border: 1px dotted black;
   border-radius: 2px;
   margin: 2rem 45rem;
+  padding: 2rem;
 }
 
 form label {
@@ -62,7 +63,7 @@ form label {
 }
 
 form select {
-  width: 50%;
+  width: 75%;
   background-color: rgb(191, 191, 191);
   color: rgb(0, 0, 0);
   border: solid 1px white;

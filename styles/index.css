@@ -14,7 +14,7 @@ article h1 {
 }
 
 article h3 {
-  color: white !important;
+  color: rgb(0, 0, 0) !important;
   width: 75%;
   margin: 0 auto;
   text-align: center;
@@ -38,8 +38,6 @@ figure embed {
 footer {
   text-align: center;
   color: white !important;
-  bottom: 0;
-  position: fixed;
   width: 100%;
 }
 

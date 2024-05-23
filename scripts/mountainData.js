@@ -558,8 +558,8 @@ function dropdown() {
             <div class="location-detail"><span>Description:</span> ${selectedLocation.desc}</div>
             <div class="location-detail"><span>Latitude:</span> ${selectedLocation.coords.lat}</div>
             <div class="location-detail"><span>Longitude:</span> ${selectedLocation.coords.lng}</div>
-            <div class="location-detail">
-                <span>Image:</span><br>
+            <div class="location-detail-img">
+                <br>
                 <img src="/images/${selectedLocation.img}" alt="${selectedLocation.name}" style="max-width: 100%; height: auto;">
                 <br>
             </div>  

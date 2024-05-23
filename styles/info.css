@@ -1,1 +1,87 @@
-/*# sourceMappingURL=info.css.map */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: rgb(191, 191, 191);
+}
+
+article h1 {
+  color: black;
+  text-align: center;
+  visibility: hidden;
+}
+
+article h3 {
+  color: rgb(0, 0, 0) !important;
+  width: 75%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+article {
+  margin-top: 3vh;
+}
+
+footer {
+  text-align: center;
+  color: white !important;
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+}
+
+.nav-link {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  margin-top: 3vh;
+}
+
+.nav-link:hover {
+  color: white !important;
+}
+
+nav {
+  background-color: rgb(5, 67, 5) !important;
+}
+
+form {
+  text-align: center;
+  border: 1px dotted black;
+  border-radius: 2px;
+  margin: 2rem 45rem;
+  padding: 2rem;
+}
+
+form label {
+  color: rgb(0, 0, 0);
+  width: 100%;
+  font-size: 2rem;
+}
+
+form select {
+  width: 75%;
+  background-color: rgb(191, 191, 191);
+  color: rgb(0, 0, 0);
+  border: solid 1px white;
+}
+
+.location-detail {
+  font-size: 1rem;
+  width: 100%;
+}
+
+.location-detail-img {
+  font-size: 1rem;
+  width: 100%;
+  height: 100%;
+}
+
+span {
+  color: rgb(0, 0, 0);
+  width: 100%;
+  font-size: 1rem;
+}/*# sourceMappingURL=info.css.map */
