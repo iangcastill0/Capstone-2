@@ -23,8 +23,7 @@ footer{
     text-align: center;
     color: white !important;
     bottom: 0;
-    position: fixed;
-    width: 100%;
+    visibility: hidden;    
 }
 .nav-link{
     color: white;
@@ -71,4 +70,5 @@ span{
     color: rgb(0, 0, 0);
     width: 100%;
     font-size: 1rem;
+    font-weight: 500;
 }

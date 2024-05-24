@@ -30,6 +30,7 @@ footer {
   bottom: 0;
   position: fixed;
   width: 100%;
+  visibility: hidden;
 }
 
 .nav-link {
@@ -78,4 +79,5 @@ span {
   color: rgb(0, 0, 0);
   width: 100%;
   font-size: 1rem;
+  font-weight: 500;
 }/*# sourceMappingURL=search.css.map */
