@@ -6894,25 +6894,73 @@ function dropdown() {
     });
 }
 
-dropdown();
+// dropdown();
 
-// search via location
-function dropdownlocate() {
-    const select = document.getElementById("selectLocation");
+// // search via location
+// function dropdownlocate() {
+//     const select = document.getElementById("selectLocation");
+//     nationalParksArray.forEach(loc => {
+//         const option = document.createElement("option");
+//         option.textContent = loc.City;
+//         option.value = loc.LocationID;
+//         select.appendChild(option);
+//     });
+
+//      // Add event listener to the select element
+//      select.addEventListener("change", () => {
+//         const selectedLocationID = select.value;
+//         const selectedLocation = nationalParksArray.find(loc => loc.LocationID === selectedLocationID);
+//         if (selectedLocation) {
+//             const displayDiv = document.getElementById("results");
+//             displayDiv.innerHTML = "";
+//             displayDiv.innerHTML = `
+//                 <div class="location-detail"><span>Location ID:</span> ${selectedLocation.LocationID}</div>
+//                 <div class="location-detail"><span>Location Name:</span> ${selectedLocation.LocationName}</div>
+//                 <div class="location-detail"><span>Address:</span> ${selectedLocation.Address}</div>
+//                 <div class="location-detail"><span>City:</span> ${selectedLocation.City}</div>
+//                 <div class="location-detail"><span>State:</span> ${selectedLocation.State}</div>
+//                 <div class="location-detail"><span>Zip Code:</span> ${selectedLocation.ZipCode}</div>
+//                 <div class="location-detail"><span>Phone:</span> ${selectedLocation.Phone}</div>
+//                 <div class="location-detail"><span>Fax:</span> ${selectedLocation.Fax}</div>
+//                 <div class="location-detail"><span>Latitude:</span> ${selectedLocation.Latitude}</div>
+//                 <div class="location-detail"><span>Longitude:</span> ${selectedLocation.Longitude}</div>
+//                 <div class="location-detail"><span>Coordinates:</span> ${selectedLocation.Location.coordinates.join(', ')}</div>
+//                 <div class="location-detail"><span>Type:</span> ${selectedLocation.Location.type}</div>
+//             `;
+//         }
+//     });
+// }
+
+// dropdownlocate();
+function populateAndHandleDropdowns() {
+    if (nationalParksArray.length === 0) {
+        alert("No national parks data available.");
+        return;
+    }
+    const selectName = document.getElementById("selectInput");
+    const selectCity = document.getElementById("selectLocation");
+
+    // Populate dropdowns
     nationalParksArray.forEach(loc => {
-        const option = document.createElement("option");
-        option.textContent = loc.City;
-        option.value = loc.LocationID;
-        select.appendChild(option);
+        const optionName = document.createElement("option");
+        optionName.textContent = loc.LocationName;
+        optionName.value = loc.LocationID;
+        selectName.appendChild(optionName);
+
+        const optionCity = document.createElement("option");
+        optionCity.textContent = loc.City;
+        optionCity.value = loc.LocationID;
+        selectCity.appendChild(optionCity);
     });
 
-     // Add event listener to the select element
-     select.addEventListener("change", () => {
-        const selectedLocationID = select.value;
+    // Handle change events
+    function handleChange(event, otherSelect) {
+        const selectedLocationID = event.target.value;
+        otherSelect.selectedIndex = 0; // Reset the other dropdown
         const selectedLocation = nationalParksArray.find(loc => loc.LocationID === selectedLocationID);
+
         if (selectedLocation) {
             const displayDiv = document.getElementById("results");
-            displayDiv.innerHTML = "";
             displayDiv.innerHTML = `
                 <div class="location-detail"><span>Location ID:</span> ${selectedLocation.LocationID}</div>
                 <div class="location-detail"><span>Location Name:</span> ${selectedLocation.LocationName}</div>
@@ -6928,8 +6976,12 @@ function dropdownlocate() {
                 <div class="location-detail"><span>Type:</span> ${selectedLocation.Location.type}</div>
             `;
         }
-    });
+    }
+
+    selectName.addEventListener("change", (event) => handleChange(event, selectCity));
+    selectCity.addEventListener("change", (event) => handleChange(event, selectName));
 }
 
-dropdownlocate();
+// Initialize dropdowns
+populateAndHandleDropdowns();
 });

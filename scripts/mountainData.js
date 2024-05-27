@@ -533,6 +533,10 @@ const mountainsArray = [
 
 
 function dropdown() {
+    if (mountainsArray.length === 0) {
+        alert("No Mountain data available.");
+        return;
+    }
     const select = document.getElementById("selectInput");
     mountainsArray.forEach(loc => {
         const option = document.createElement("option");
